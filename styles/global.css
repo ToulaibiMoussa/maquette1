@@ -1,0 +1,143 @@
+:root {
+  --bg: #f5f7fb;
+  --text: #1f2937;
+  --text-strong: #111827;
+  --surface: #fff;
+  --surface-shadow: rgba(0, 0, 0, 0.08);
+  --surface-elevated-shadow: rgba(0, 0, 0, 0.12);
+  --primary: #2563eb;
+  --bg-primary: #487be7f1;
+  --primary-text: #fff;
+  --para: clamp(0.8rem, 2vw, 1.1rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "nunito", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  --webkit-scrollbar: none;
+}
+
+h2 {
+  font-size: clamp(1.3rem, 5vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+/* Hero section */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  line-height: 1.5;
+  font-size: var(--para);
+}
+
+.hero-content .btn {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.hero img {
+  width: 100%;
+  max-width: 500px;
+  height: 200px;
+
+  transition: all 0.8s;
+  border-radius: 148px 172px 144px 89px;
+}
+
+.hero img:hover {
+  border-radius: 5px 42px 8px 69px;
+}
+
+/* Section Collections */
+
+.collections {
+  background-color: var(--primary);
+  color: var(--primary-text);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.703);
+  padding: 2rem 0;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.gallerie {
+  padding: 2rem 0;
+  text-align: center;
+  display: flex;
+  gap: 10px;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  padding-left: 10px;
+}
+
+.collection-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 0 0 70%;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 1px var(--surface);
+  scroll-snap-align: center;
+  transition: all 0.3s;
+  background: rgba(0, 0, 0, 0.196);
+  backdrop-filter: blur(20px);
+}
+
+.collection-item:hover {
+  box-shadow: 0 0 5px var(--primary);
+  transform: translateY(-10px);
+}
+
+.collection-item img {
+  width: 100%;
+
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.8s;
+}
+
+.collection-item p {
+  line-height: 0;
+  opacity: 0;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  transition: all 0.7s;
+}
+
+.gallerie .btn {
+  all: initial;
+  background-color: var(--bg);
+  color: var(--primary);
+  font-weight: 600;
+  padding: 5px 20px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+
+.collection-item:hover p {
+  line-height: normal;
+  opacity: 1;
+}
